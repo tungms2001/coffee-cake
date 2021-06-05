@@ -1,0 +1,41 @@
+/*-----background----*/
+
+.mid-background .background .text-background {
+    position: absolute;
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0px;
+    top: 340px;
+    font-family: Andale Mono, monospace;
+}
+
+@media screen and (max-width: 600px) {
+    .background .text-background {
+        width: 100%;
+        margin-top: 120px;
+    }
+}
+
+
+/*---Chính sách giao hàng---*/
+
+.container {
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container ul {
+    list-style-type: square;
+    font-family: Parkavenue, cursive;
+    color: brown;
+}
+
+.container p {
+    font-family: Parkavenue, cursive;
+}

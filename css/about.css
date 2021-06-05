@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/*-----1---*/
+
+.content .content-a img {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 400px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-bottom: 10px;
+    transform: rotate(2deg);
+    margin-left: 25%;
+    height: 350px;
+}
+
+.content-a img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.content-title {
+    font-family: Andale Mono, monospace;
+    font-size: 32px;
+    color: #1625c5;
+    margin-top: 80px;
+    margin-left: 20%;
+}
+
+.content-titlea {
+    font-family: Parkavenue, cursive;
+    color: black;
+    font-size: 20px;
+    margin-left: 20%;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 280px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 750px) {
+    .column {
+        width: 100%;
+    }
+    .content .content-a img {
+        height: 250px;
+        width: 50%;
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .column {
+        width: 100%;
+    }
+    .content .content-a img {
+        height: 250px;
+        width: 50%;
+        margin-left: 50px;
+    }
+}
+
+
+/*------2------*/
+
+* {
+    box-sizing: border-box;
+}
+
+.content-b .content-c img {
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    width: 400px;
+    margin-top: 68px;
+    display: inline-block;
+    margin-bottom: 10px;
+    transform: rotate(-2deg);
+    margin-left: 25%;
+    height: 350px;
+}
+
+.content-c img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.content-title-b {
+    font-family: Andale Mono, monospace;
+    font-size: 32px;
+    color: #1625c5;
+    margin-top: 180px;
+    margin-right: 20%;
+}
+
+.content-titlea-b {
+    font-family: Parkavenue, cursive;
+    color: black;
+    font-size: 20px;
+    margin-right: 20%;
+}
+
+.column-b {
+    float: right;
+    width: 50%;
+    padding: 10px;
+    height: 280px;
+}
+
+.row-b:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 750px) {
+    .column-b {
+        width: 100%;
+    }
+    .content-title-b {
+        margin-left: 24%;
+        margin-top: 100px;
+    }
+    .content-titlea-b {
+        margin-left: 24%;
+    }
+    .content-b .content-c img {
+        height: 250px;
+        width: 50%;
+        margin-left: 50px;
+        margin-top: 10%;
+    }
+}

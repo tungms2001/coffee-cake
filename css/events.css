@@ -1,0 +1,95 @@
+/*---1---*/
+.container-fa {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 320px;
+}
+
+.container-fa img {
+    vertical-align: middle;
+}
+
+.container-fa .content-fa {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0px;
+}
+/*---2---*/
+
+.container-fb {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 320px;
+}
+
+.container-fb img {
+    vertical-align: middle;
+}
+
+.container-fb .content-fb {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0px;
+}
+/*---3---*/
+
+.container-fc {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 320px;
+}
+
+.container-fc img {
+    vertical-align: middle;
+}
+
+.container-fc .content-fc {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0px;
+}
+/*---4---*/
+
+.container-fd {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+    height: 320px;
+}
+
+.container-fd img {
+    vertical-align: middle;
+}
+
+.container-fd .content-fd {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    /* Fallback color */
+    background: rgba(0, 0, 0, 0.5);
+    /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 0px;
+}

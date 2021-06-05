@@ -1,0 +1,47 @@
+.articleBlock {
+    background-color: #f8f8ff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 50px;
+    padding-left: 65px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.articleBlock__header {
+    font-family: Arial Helvetica, sans-serif;
+    font-size: 25px;
+    color: #00537a;
+}
+
+.articleBlock_border{
+    border: 3px dashed #696969;
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-bottom: 7px;
+}
+
+.articleBlock__summaryHeadline {
+    font-family: Andale Mono, monospace;
+    font-size: 16px;
+    color: #1625c5;
+}
+
+.articleBlock__text p {
+    font-family: Parkavenue, cursive;
+    font-size: 16px;
+    color: #696969;
+    text-align: justify;
+}
+
+.articleBlock__text h3 {
+    font-family: Parkavenue, cursive;
+    font-size: 16px;
+    color: #1625c5;
+}
+
+.articleBlock__text ul {
+    list-style-type: square;
+    font-family: Parkavenue, cursive;
+    color: brown;
+}
