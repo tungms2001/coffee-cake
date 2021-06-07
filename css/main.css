@@ -1,4 +1,5 @@
-.pic1 {
+.main {
+    width: 100%;
     position: relative;
     font-family: verdana, arial, sans-serif;
 }
@@ -15,7 +16,7 @@
     text-align:justify;
 }
 
-.pic1 img {
+.main img {
     width: 100%;
 }
 
@@ -25,20 +26,19 @@
 }
 .text-block p{
     margin-top: 20px;
-}
-
-.next {
-    background-color: #1625c5;
-    color: #FFFFFF;
+    line-height: 30px;
 }
 
 .more a {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
+    background-color: #00B000;
+    color: #FFFFFF;
+    border-radius: 2px 2px 2px 2px;
 }
 
 .more a:hover {
-    background-color: #E8E8E8;
-    color: #34a8eb;
+    background-color: #006600;
+    color: #FFFFFF;
 }

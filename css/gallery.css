@@ -1,7 +1,7 @@
 div.gallery img {
-    width: 100%;
+    width: 90%;
     height: 200px;
-    margin: 40px 40px 40px 40px;
+    margin: 40px 40px 40px 0px;
 }
 
 * {

@@ -1,0 +1,62 @@
+.product{
+    width: auto;
+    height: auto;
+
+}
+
+.product ul{
+    margin-bottom: 40px;
+}
+
+.product ul li:hover{
+    background-color: #999999;
+}
+
+.product ul h2{
+    height: 50px;
+    font-weight: 600;
+    font-size: 20px;
+    border: 1px solid #00B000;
+    border-top: 2px solid #00B000;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    padding-left: 30px;
+    margin-right: 82%;
+    margin-left: 33px;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+}
+
+.product h2{
+    background: #00B000;
+    color: #FFFFFF;
+}
+
+.fa-chevron-circle-down{
+    margin-left: 58px;
+}
+
+.product ul li{
+    list-style-type: none;
+    line-height: 35px;
+    border: 1px solid #00B000;
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    padding-left: 30px;
+    margin-right: 82%;
+    margin-left: 33px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.product ul a li:hover{
+    color: #006600;
+}
+
+.product ul a {
+    text-decoration: none;
+    color: #000000;
+}
