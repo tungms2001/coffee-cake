@@ -2,7 +2,7 @@
 <div class="header">
     <div class="header_top">
         <div class="logo">
-            <a href="index.php"><img src="images/coffeecake.jpg" alt="" /></a>
+            <a href="http://localhost:8080/coffee-cake/index.php"><img src="http://localhost:8080/coffee-cake/images/coffeecake.jpg" alt="" /></a>
         </div>
         <div class="header_top_right">
             <div class="search_box">

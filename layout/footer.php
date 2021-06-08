@@ -13,10 +13,11 @@
         <li>
             <h2>Thông Tin-Chính Sách</h2>
             <ul class="box">
-                <li><a href="about.php">Giới Thiệu</a></li>
-                <li><a href="shipper.php">Chính sách giao hàng</a></li>
-                <li><a href="history.php">Sứ mệnh của chúng tôi</a></li>
+                <li><a href="http://localhost:8080/coffee-cake/about.php">Giới Thiệu</a></li>
+                <li><a href="http://localhost:8080/coffee-cake/shipper.php">Chính sách giao hàng</a></li>
+                <li><a href="http://localhost:8080/coffee-cake/history.php">Sứ mệnh của chúng tôi</a></li>
             </ul>
+
         </li>
         <li class="features">
             <h2>Liên Hệ</h2>
@@ -38,4 +39,4 @@
         <p>&copy;2021.Bản quyền Coffee Cake Powered by Túdn & Tùngms</p>
     </div>
 </footer>
-<script src="./js/main.js"></script>
+<script src="js/main.js"></script>

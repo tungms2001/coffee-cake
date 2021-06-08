@@ -1,31 +1,15 @@
 <!--GALLERY-->
 <link rel="stylesheet" href="css/gallery.css">
 
-<div class="responsive">
-    <div class="gallery">
-        <div class="container1">
-            <a target="_blank" href="#">
-                <img src="https://dayphache.edu.vn/wp-content/uploads/2020/02/mon-tra-sua-tran-chau.jpg" alt="" width="100%" height="400" class="image1">
-            </a>
-        </div>
-    </div>
-</div>
-<div class="responsive">
-    <div class="gallery">
-        <div class="container2">
-            <a target="_blank" href="#">
-                <img src="https://www.hoteljob.vn/files/6-loai-ly-tach-chuyen-phuc-vu-ca-phe-barista-can-biet-4.jpg" alt="" width="100%" height="400" class="image2">
-            </a>
-        </div>
-    </div>
-</div>
-<div class="responsive">
-    <div class="gallery">
-        <div class="container3">
-            <a target="_blank" href="#">
-                <img src="https://cdnsg.kilala.vn/data/upload/article/5263/Starbucks%20Nhat%20Ban%20(4).jpg" alt="" width="100%" height="400" class="image3">
-            </a>
-        </div>
-    </div>
+<div id="d-gallery">
+    <a href="http://localhost:8080/coffee-cake/products/milktea.php">
+        <img src="https://dayphache.edu.vn/wp-content/uploads/2020/02/mon-tra-sua-tran-chau.jpg" alt="">
+    </a>
+    <a href="http://localhost:8080/coffee-cake/products/cafe.php">
+        <img src="https://www.hoteljob.vn/files/6-loai-ly-tach-chuyen-phuc-vu-ca-phe-barista-can-biet-4.jpg" alt="">
+    </a>
+    <a href="http://localhost:8080/coffee-cake/products/cake.php">
+        <img src="https://resources.matcha-jp.com/resize/720x2000/2019/11/13-90454.jpeg" alt="">
+    </a>
 </div>
 <div class="clear"></div>

@@ -2,13 +2,13 @@
 <div class="menu">
     <hr width="90%" size="1px" align="center" color="white">
     <ul id="mega-menu-orange" class="mm-orange">
-        <li><a href="index.php">Trang chủ</a> </li>
-        <li><a href="products.php">Sản phẩm</a> </li>
+        <li><a href="http://localhost:8080/coffee-cake/index.php">Trang chủ</a> </li>
+        <li><a href="http://localhost:8080/coffee-cake/products.php">Sản phẩm</a> </li>
         <li><a href="http://localhost:8080/coffee-cake/about.php">Giới thiệu</a> </li>
     </ul>
     <!--LOGIN-SIGNUP-->
     <div id="regis">
-        <a href="regis.php">Đăng Ký</a>
+        <a href="http://localhost:8080/coffee-cake/regis.php">Đăng Ký</a>
     </div>
     <div id="login">
         <a onclick="showLogin()" href="#">Đăng Nhập</a>
@@ -30,5 +30,5 @@
     </form>
 </div>
 
-<link href="css/login.css" rel="stylesheet" type="text/css" media="all"/>
-<script src="js/login.js"></script>
+<link href="http://localhost:8080/coffee-cake/css/login.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="http://localhost:8080/coffee-cake/js/login.js"></script>

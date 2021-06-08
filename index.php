@@ -7,13 +7,13 @@
 </head>
 <body>
     <?php
-        include "layout/header.php";
-        include "layout/menu.php";
-        include "layout/swiper.php";
-        include "layout/gallery.php";
-        include "layout/main.php";
-        include "layout/event.php";
-        include "layout/footer.php";
+        require "layout/header.php";
+        require "layout/menu.php";
+        require "layout/swiper.php";
+        require "layout/gallery.php";
+        require "layout/main.php";
+        require "layout/event.php";
+        require "layout/footer.php";
     ?>
 </body>
 </html>

@@ -10,8 +10,8 @@
 </head>
 <body>
     <?php
-        include "layout/header.php";
-        include "layout/menu.php";
+        require "layout/header.php";
+        require "layout/menu.php";
     ?>
 
     <!--MAIN-->
@@ -52,7 +52,7 @@
     </article>
 
     <?php
-    include "layout/footer.php";
+    require "layout/footer.php";
     ?>
 </body>
 </html>

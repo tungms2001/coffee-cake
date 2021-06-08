@@ -8,7 +8,7 @@
         <p style="color: black;">Bên cạnh niềm tự hào về ly trà sữa ngon-sạch-tươi<br>
             Chúng tôi luôn mang đến khách hàng trải nghiệm tốt nhất về dịch vụ và không gian</p>
         <div class="more">
-            <a href="about.php" class="next">Xem thêm &raquo;</a>
+            <a href="http://localhost:8080/coffee-cake/about.php" class="next">Xem thêm &raquo;</a>
         </div>
     </div>
 </div>

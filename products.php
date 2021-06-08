@@ -11,25 +11,25 @@
 </head>
 <body>
     <?php
-        include "layout/header.php";
-        include "layout/menu.php";
+        require "layout/header.php";
+        require "layout/menu.php";
     ?>
     <!--MAIN-->
     <div class="product">
-
         <ul id="category">
-            <a class="cate"><h2>Thể loại  <i class="fa fa-chevron-circle-down"></i></h2></a>
-            <!--            đem thẻ li vào trong thẻ a, tự làm những cái còn lại, gì nữa k-->
-            <a href="products.php"><li>Tất cả</li></a>
-            <a href="products/milktea.php"><li>Trà sữa</li></a>
-            <a href="products/cafe.php"><li>Cafe</li></a>
-            <a href="products/cake.php"><li>Bánh ngọt</li></a>
-            <a href="products/topping.php"><li>Topping</li></a>
+            <a class="cate"><h2>Thể loại<i class="fa fa-chevron-circle-down"></i></h2></a>
+            <a href="http://localhost:8080/coffee-cake/products.php"><li>Tất cả</li></a>
+            <a href="http://localhost:8080/coffee-cake/products/milktea.php"><li>Trà sữa</li></a>
+            <a href="http://localhost:8080/coffee-cake/products/cafe.php"><li>Cafe</li></a>
+            <a href="http://localhost:8080/coffee-cake/products/cake.php"><li>Bánh ngọt</li></a>
+            <a href="http://localhost:8080/coffee-cake/products/topping.php"><li>Topping</li></a>
         </ul>
     </div>
 
     <?php
-    include "layout/footer.php";
+    require "layout/footer.php";
     ?>
+
+    <script src="js/product.js"></script>
 </body>
 </html>

@@ -49,13 +49,17 @@ input[type="password"]::placeholder {
     opacity: 1;
 }
 
-#container>input:focus {
-    outline: none !important;
-    border-color: #1877F2;
+input[type="checkbox"]{
+    display: none;
 }
 
-#container button {
-    background-color: #1877F2;
+#container>input:focus {
+    outline: none !important;
+    border-color: #00B000;
+}
+
+#popup #container button {
+    background-color: #00B000;
     border: none;
     border-radius: inherit;
     color: #FFFFFF;
