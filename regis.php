@@ -17,11 +17,11 @@
     <div class="container">
         <div class="title">TẠO TÀI KHOẢN</div>
         <div class="content">
-            <form action="#">
+            <form id="signup-form" class="animate" action="http://localhost:8080/coffee-cake/index.php?controller=user&action=signup" method="POST">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Họ và Tên</span>
-                        <input type="text" name="text" placeholder="Nhập họ và tên" required>
+                        <input type="text" name="name" placeholder="Nhập họ và tên" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Tên Đăng Nhập</span>
@@ -37,15 +37,15 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Mật Khẩu</span>
-                        <input type="password" name="password" placeholder="Nhập mật khẩu" required>
+                        <input type="password" name="signup_password" placeholder="Nhập mật khẩu" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Nhập Lại Mật Khẩu</span>
-                        <input type="password"name="re-password" placeholder="Nhập lại mật khẩu" required>
+                        <input type="password"name="re_password" placeholder="Nhập lại mật khẩu" required>
                     </div>
                 </div>
                 <div class="button">
-                    <input type="submit" value="Đăng Ký">
+                    <input type="submit" id="btn-signup" value="Đăng Ký">
                 </div>
             </form>
         </div>

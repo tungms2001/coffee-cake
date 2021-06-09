@@ -49,8 +49,14 @@ input[type="password"]::placeholder {
     opacity: 1;
 }
 
-input[type="checkbox"]{
-    display: none;
+#popup #sub-feature{
+    display: inline;
+    width: 140px;
+}
+
+#popup #sub-feature label{
+    float: left;
+    margin-top: 5px;
 }
 
 #container>input:focus {
@@ -65,11 +71,17 @@ input[type="checkbox"]{
     color: #FFFFFF;
     margin-bottom: 15px;
     padding: 15px;
+    cursor: pointer;
+}
+
+#popup #container button:hover{
+    background-color: #006600;
 }
 
 #container label input {
-    color: #464646;
+    color: #ffffff;
     margin-right: 5px;
+    background-color: #00B000;
 }
 
 .animate {

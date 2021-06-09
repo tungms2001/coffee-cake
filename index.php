@@ -15,5 +15,7 @@
         require "layout/event.php";
         require "layout/footer.php";
     ?>
+
+    <script src="http://localhost:8080/coffee-cake/js/script.js"></script>
 </body>
 </html>
