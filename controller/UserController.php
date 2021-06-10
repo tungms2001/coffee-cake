@@ -41,7 +41,8 @@ class UserController extends BaseController {
                 'password' => trim($_POST['signup_password']),
                 're_password' => trim($_POST['re_password']),
                 'name' => trim($_POST['name']),
-                'email' => trim($_POST['email'])
+                'email' => trim($_POST['email']),
+                'phone' => trim($_POST['phone'])
             );
             $this->user_model->signup($data);
             header('location:' . URLROOT);
@@ -93,9 +94,7 @@ class UserController extends BaseController {
                 trim($_GET['username']),
                 trim($_POST['name']),
                 trim($_POST['email']),
-                trim($_POST['phone']),
-                trim($_POST['birthday']),
-                trim($_POST['gender']) == 'male' ? 'TRUE' : 'FALSE'
+                trim($_POST['phone'])
             );
             $_SESSION['name'] = trim($_POST['name']);
             header('location:' . URLROOT . '?controller=user&action=get_detail');

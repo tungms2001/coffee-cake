@@ -30,8 +30,6 @@
     <form id="login-form" class="modal-content animate" action="http://localhost:8080/coffee-cake/index.php?controller=user&action=login" method="POST">
         <div id="container">
             <span id="close" onClick="closeLogin()">&times;</span>
-<!--            <input type='text' name='username' value='$username' placeholder='Tài khoản' required/>-->
-<!--            <input type='password' name='password' value='$pasword' placeholder='Mật khẩu' required/>-->
             <?php
                 $username = $password = "";
                 if (isset($_COOKIE['account'])) {

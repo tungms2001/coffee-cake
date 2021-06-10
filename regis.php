@@ -33,7 +33,7 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Số Điện Thoại</span>
-                        <input type="text" name="phonenmuber" placeholder="Nhập số điện thoại" required>
+                        <input type="text" name="phone" placeholder="Nhập số điện thoại" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Mật Khẩu</span>

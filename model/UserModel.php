@@ -13,7 +13,6 @@ class UserModel {
         $data = $this->db_conn->query($validation_query);
         if ($data->num_rows > 0) {
             $curr_user = $data->fetch_assoc();
-//            if (password_verify($curr_user['password'], $password))
             if ($curr_user['PASSWORD'] == $password)
                 return $curr_user;
             else
@@ -35,10 +34,8 @@ class UserModel {
             $data['password'] . "', '" .
             $data['name'] . "', " .
             'NULL' . ", '" .
-            $data['email'] . "', " .
-            'NOW()' . ", '" .
-            $data['birthday'] . "', " .
-            $data['gender'] . ', NULL);';
+            $data['phone'] . "', " .
+            $data['email'] . "', ";
 
         $this->db_conn->query($insert_query);
     }
