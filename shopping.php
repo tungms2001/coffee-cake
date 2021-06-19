@@ -70,91 +70,91 @@ require "layout/header.php";
 
 <!--MAIN-->
 <?php
-//session_start();
 require_once 'database.php';
-
-    $id = intval($_GET['id']);
-
-    if(isset($_SESSION['cart'][$id])){
-        $_SESSION['cart'][$id]['quantum']++;
-    }else{
-        $sql_s="SELECT * FROM product WHERE IDPR = $id";
-        $query_s=mysqli_query($con, $sql_s);
-
-        $row_s=mysqli_fetch_array($query_s);
-        $_SESSION['cart'][$row_s['IDPR']]=array(
-            "quantum" => 1,
-            "PRICE" => $row_s['PRICE']
-        );
-    }
 ?>
 
 <?php
-    if(isset($_POST['submit'])){
+if(isset($_SESSION['cart'])){?>
+    <?php
+        if(isset($_POST['submit'])){
 
-        foreach($_POST['quantum'] as $key => $val) {
-            if($val==0) {
-                unset($_SESSION['cart'][$key]);
-            }else{
-                $_SESSION['cart'][$key]['quantum']=$val;
+            foreach($_POST['quantum'] as $key => $val) {
+                if($val==0) {
+                    unset($_SESSION['cart'][$key]);
+                }else{
+                    $_SESSION['cart'][$key]['quantum']=$val;
+                }
             }
         }
-    }
-?>
-
-    <div class="container-fluid" style="margin-top: 20px; margin-bottom: 20px">
-        <div class="card">
-            <div class="card-header">
-                <h2>Giỏ hàng của tôi</h2>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>#</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Hình ảnh</th>
-                            <th>Số lượng</th>
-                            <th>Giá sản phẩm</th>
-                            <th>Thành tiền</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                        $sql = "SELECT * FROM product WHERE IDPR IN (";
-                            foreach ($_SESSION['cart'] as $id => $value){
-                                $sql.=$id.",";
-                            }
-                            $sql=substr($sql, 0, -1).") ORDER BY namepr ASC";
-                            $query=mysqli_query($con, $sql);
-                            $totalprice=0;
-                            while($row=mysqli_fetch_array($query)){
-                                $subtotal=$_SESSION['cart'][$row['IDPR']]['quantum']*$row['PRICE'];
-                                $totalprice+=$subtotal;
-                            ?>
-                                <tr>
-                                    <td>#</td>
-                                    <td><?php echo $row['NAMEPR']?></td>
-                                    <td>
-                                        <img style="width: 100px"; src="images/<?php echo $row['IMAGE'];?>">
-                                    </td>
-                                    <td>
-                                        <input type="text" name="quantum[<?php echo $row['IDPR'];?>]" size="5" value="<?php echo $_SESSION['cart'][$row['IDPR']]['quantum'];?>"/>
-                                    </td>
-                                    <td><?php echo $row['PRICE']?></td>
-                                    <td><?php echo $_SESSION['cart'][$row['IDPR']]['quantum']*$row['PRICE'];?></td>
-                                </tr>
+    ?>
+    <form method="post" action="shopping.php">
+        <div class="container-fluid" style="margin-top: 20px; margin-bottom: 20px">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Giỏ hàng của tôi</h2>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Hình ảnh</th>
+                                <th>Số lượng</th>
+                                <th>Giá sản phẩm</th>
+                                <th>Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
                         <?php
-                            }
-                        ?>
-                    </tbody>
-                    <tr>
-                        <td colspan="4">Tổng thành tiền: <?php echo $totalprice ?></td>
-                    </tr>
-                </table>
-
-                <br/>
-                <button type="submit" name="submit">Cập nhật</button>
+                            $i = 1;
+                            $sql = "SELECT * FROM product WHERE IDPR IN (";
+                                foreach ($_SESSION['cart'] as $id => $value){
+                                    $sql.=$id.",";
+                                }
+                                $sql=substr($sql, 0, -1).") ORDER BY namepr ASC";
+                                $query=mysqli_query($con, $sql);
+                                $totalprice=0;
+                                while($row=mysqli_fetch_array($query)){
+                                    $subtotal=$_SESSION['cart'][$row['IDPR']]['quantum']*$row['PRICE'];
+                                    $totalprice+=$subtotal;
+                                ?>
+                                    <tr>
+                                        <td><?php echo $i++;?></td>
+                                        <td><?php echo $row['NAMEPR']?></td>
+                                        <td>
+                                            <img style="width: 100px"; src="images/<?php echo $row['IMAGE'];?>">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="quantum[<?php echo $row['IDPR'];?>]" size="5" value="<?php echo $_SESSION['cart'][$row['IDPR']]['quantum'];?>"/>
+                                        </td>
+                                        <td><?php echo $row['PRICE']?></td>
+                                        <td><?php echo $_SESSION['cart'][$row['IDPR']]['quantum']*$row['PRICE'];?></td>
+                                    </tr>
+                            <?php
+                                }
+                            ?>
+                        </tbody>
+                        <tr>
+                            <td colspan="4">Tổng thành tiền: <?php echo $totalprice ?></td>
+                        </tr>
+                    </table>
+                    <button type="submit" name="submit">Cập nhật</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <p style="margin-left: 13px">(*)Để xóa một sản phẩm hãy nhập số lượng của nó thành 0.</p>
+<?php
+}else{
+    echo "<h3 style='height: 200px; margin-left: 65px; margin-top: 15px'>Giỏ hàng của bạn đang trống. Vui lòng thêm một số sản phẩm!</h3>";
+}
+?>
+<?php
+    require "layout/footer.php";
+?>
+</body>
+</html>
 <!--            </div>-->
 <!--            <br>-->
 <!--            <div class="card-body">-->
@@ -164,11 +164,3 @@ require_once 'database.php';
 <!--                <div><label>Ghi chú: </label><textarea name="note" cols="40" rows="5"></textarea></div>-->
 <!--                <input type="submit" name="order_click" value="Đặt hàng"/>-->
 <!--            </div>-->
-        </div>
-    </div>
-
-<?php
-require "layout/footer.php";
-?>
-</body>
-</html>

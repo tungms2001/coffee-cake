@@ -31,6 +31,24 @@
 
     ?>
 
+    <?php
+        if(isset($_GET['id'])){
+            $id = intval($_GET['id']);
+            if(isset($_SESSION['cart'][$id])){
+                $_SESSION['cart'][$id]['quantum']++;
+            }else{
+                $sql_s="SELECT * FROM product WHERE IDPR = $id";
+                $query_s=mysqli_query($con, $sql_s);
+
+                $row_s=mysqli_fetch_array($query_s);
+                $_SESSION['cart'][$row_s['IDPR']]=array(
+                    "quantum" => 1,
+                    "PRICE" => $row_s['PRICE']
+                );
+            }
+        }
+    ?>
+
     <div class="product">
         <h2>Thể loại<i class="fa fa-chevron-circle-down"></i></h2>
     </div>
@@ -61,7 +79,7 @@
                                 </h4>
                             </div>
                             <div class="add-to-cart-action">
-                                <form method="post" action="shopping.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
+                                <form method="post" action="products.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
                                     <input type="hidden" name="id" value="">
                                     <button type="submit" name="add" class="btn">
                                         <span class="icon icon-cart">Thêm vào giỏ hàng</span>
@@ -105,7 +123,7 @@
                                 </h4>
                             </div>
                             <div class="add-to-cart-action">
-                                <form method="post" action="shopping.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
+                                <form method="post" action="products.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
                                     <input type="hidden" name="id" value="">
                                     <button type="submit" name="add" class="btn">
                                         <span class="icon icon-cart">Thêm vào giỏ hàng</span>
@@ -147,7 +165,7 @@
                                 </h4>
                             </div>
                             <div class="add-to-cart-action">
-                                <form method="post" action="shopping.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
+                                <form method="post" action="products.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
                                     <input type="hidden" name="id" value="">
                                     <button type="submit" name="add" class="btn">
                                         <span class="icon icon-cart">Thêm vào giỏ hàng</span>
@@ -189,7 +207,7 @@
                                 </h4>
                             </div>
                             <div class="add-to-cart-action">
-                                <form method="post" action="shopping.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
+                                <form method="post" action="products.php?id=<?php echo $row['IDPR'];?>" class="add-to-cart">
                                     <input type="hidden" name="id" value="">
                                     <button type="submit" name="add" class="btn">
                                         <span class="icon icon-cart">Thêm vào giỏ hàng</span>

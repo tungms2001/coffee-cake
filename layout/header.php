@@ -16,7 +16,6 @@
             <div class="shopping_cart">
                 <a href="http://localhost:8080/coffee-cake/shopping.php" class="cart">
                     <span class="icon_cart"><i class="fa fa-shopping-basket"></i> </span>
-                    <span class="no_product"> 0 </span>
                     <span class="cart_title">SẢN PHẨM</span>
                 </a>
             </div>

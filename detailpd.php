@@ -32,10 +32,6 @@ require "layout/menu.php";
         <div class="detailpd-item">
             <h3 id="name-item"><?php echo $row_up['NAMEPR'];?></h3>
             <span class="detail-price"><?php echo $row_up['PRICE'];?>₫</span>
-            <div class="detailpd-amount">
-                <h3 class="quantum">Số lượng</h3>
-                <input class="text-quantum" type="text" name="quantum" value="1">
-            </div>
         </div>
         <div class="add-to-cart-action">
             <form method="post" action="shopping.php?id=<?php echo $row_up['IDPR'];?>" class="add-to-cart">
