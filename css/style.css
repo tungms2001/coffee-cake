@@ -72,22 +72,18 @@ html, body {
 .shopping_cart{
     float:right;
     width: 140px;
-    margin-top: 1px;
-    position: relative;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     cursor:pointer;
+    margin-top: 10px;
 }
-.cart{
+.shopping_cart .cart{
     font-size:12px;
     font-weight:bolder;
     color: #FFFFFF;
     border: 2px solid #FFFFFF;
     border-radius: 15px 15px 15px 15px;
-    width: 135px;
-    height: 32px;
-    padding-top: 9px;
+    height: 20px;
+    text-decoration: none;
+    padding: 5px 8px 5px 0;
 }
 .icon_cart{
     padding-right: 10px;
@@ -138,22 +134,30 @@ html, body {
 .menu ul li a:hover{
     color: #006600;
 }
-/*.menu ul li a:visited{*/
-/*    color: #006600;*/
-/*}*/
-.menu #signup-btn{
+
+.menu .menu-right #regis{
     float: right;
-    margin-right: 30px;
-}
-.menu #menu-and-right{
-    float: right;
-    margin-right: 45px;
-    margin-top: 0;
+    margin-right: 50px;
 }
 
-.menu #menu-and-right .menu-rightl{
-    margin-right: 30px;
+.menu .menu-right #login{
+    padding-left: 80%;
 }
+
+.menu .menu-right .logout{
+    float: right;
+    margin-right: 50px;
+    margin-top: -15px;
+}
+.menu .menu-right .username{
+    padding-left: 80%;
+    color: #3B5998;
+}
+
+.menu .menu-right .username:hover{
+    color: white;
+}
+
 .menu a{
     color: #FFFFFF;
     cursor: pointer;
@@ -262,7 +266,7 @@ html, body {
     margin-bottom: 2em;
 }
 
-h2 {
+.footer .footer-right h2 {
     font-weight: 600;
     font-size: 17px;
 }

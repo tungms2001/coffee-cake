@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf8">
     <title>Coffee Cake</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!--    <link href="http://localhost:8080/coffee-cake/css/style.css" rel="stylesheet" type="text/css" media="all"/>-->
 </head>
 <body>
     <?php
@@ -16,6 +16,5 @@
         require "layout/footer.php";
     ?>
 
-    <script src="http://localhost:8080/coffee-cake/js/script.js"></script>
 </body>
 </html>

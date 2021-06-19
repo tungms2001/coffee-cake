@@ -1,0 +1,71 @@
+.detail-product{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.detail-product .detailpd-image{
+    height: 500px;
+    width: 350px;
+}
+
+.detail-product .detail-right{
+    float: right;
+    width: 65%;
+    margin-left: 10px;
+    border: 1px groove #999999;
+    padding: 0 4px 4px 10px;
+
+}
+
+.detail-product .detail-right .detailpd-item #name-item{
+    color: #006600;
+    font-size: 30px;
+    height: 10px;
+    padding-top: -10px;
+}
+
+.detail-product .detail-right .detailpd-item .detail-price{
+    font-weight: bold;
+    color: #faa209;
+}
+
+.detail-product .detail-right .detailpd-item .quantum {
+    color: #006600;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.detail-product .detail-right .detailpd-item .text-quantum{
+    width: 82px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    margin-top: -15px;
+}
+
+.detail-product .detail-right .add-to-cart-action .btn{
+    border-radius: 15px 15px 15px 15px;
+    height: 28px;
+    border: 1px solid #dddddd;
+    color: #666666;
+    cursor: pointer;
+}
+
+.detail-product .detail-right .add-to-cart-action .btn:hover{
+    background-color: #006600;
+    color: #FFFFFF;
+}
+
+.detail-product .detail-right .depict-top{
+    color: #666666;
+}
+
+.detail-product .detail-right .depict{
+    margin-top: -15px;
+}
+
+
+
+

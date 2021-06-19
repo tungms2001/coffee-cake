@@ -1,4 +1,6 @@
 <!--MENU-->
+<link href="http://localhost:8080/coffee-cake/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+
 <div class="menu">
     <hr width="90%" size="1px" align="center" color="white">
     <ul id="mega-menu-orange" class="mm-orange">
@@ -8,39 +10,39 @@
     </ul>
 
     <!--LOGIN-SIGNUP-->
-    <ul id="menu-and-right" class="menu-r">
-        <?php
-            if (!isset($_SESSION['username'])) {
-                echo "<a onclick='showLogin()'href='#'><li class='menu-rightl' id='login-btn'>Đăng Nhập</li></a>";
-                echo "<a href='http://localhost:8080/coffee-cake/regis.php'> <li class='menu-right' id='signup-btn'>Đăng Ký</li></a>";
-            }
-            else {
-                echo "<a href='http://localhost:8080/coffee-cake/index.php?controller=user&action=get_detail'>
-                    <li class='menu-rightl'>" . $_SESSION['name'] . "</li>
-                  </a>";
-                echo "<a href='http://localhost:8080/coffee-cake/index.php?controller=user&action=logout'>
-                    <li class='menu-right' id='logout-btn'>Đăng Xuất</li>
-                  </a>";
-            }
+    <ul class="menu-right">
+        <?php include("login.php");
+        if (isset($_SESSION['username'])==true) {
+            ?>
+            <?php
+            echo "<ul class='username'><a href='http://localhost:8080/coffee-cake/userprofile.php'>$_SESSION[username]</a></ul>";
+            echo "<ul class='logout'><a href='http://localhost:8080/coffee-cake/logout.php'><li>Đăng xuất</li></a></ul>";
+            ?>
+            <?php
+        }
+        else{
+            ?>
+            <ul id="login">
+                <a onclick="showLogin()" href="#"><li>Đăng Nhập</li></a>
+            </ul>
+            <ul id="regis">
+                <a href="http://localhost:8080/coffee-cake/regis.php"><li>Đăng ký</li></a>
+            </ul>
+            <?php
+        }
         ?>
     </ul>
+
+    <div class="clear"></div>
 </div>
 
 <div id="popup" class="modal">
-    <form id="login-form" class="modal-content animate" action="http://localhost:8080/coffee-cake/index.php?controller=user&action=login" method="POST">
+    <form class="modal-content animate" method="POST">
         <div id="container">
             <span id="close" onClick="closeLogin()">&times;</span>
-            <?php
-                $username = $password = "";
-                if (isset($_COOKIE['account'])) {
-                    $account = explode('_', $_COOKIE['account']);   // split account cookie
-                    $username = $account[0];
-                    $password = $account[1];
-                }
-                echo "<input type='text' name='username' value='$username' placeholder='Tài khoản' required/>";
-                echo "<input type='password' name='password' value='$password' placeholder='Mật khẩu' required/>";
-                ?>
-            <button type="submit" value="submit">Đăng nhập</button>
+            <input type="text" placeholder="Tài khoản" name="username" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" required>
+            <input type="password" placeholder="Mật khẩu" name="password"value="<?php if(isset($_COOKIE["member_password"])) { echo $_COOKIE["member_password"]; } ?>" required>
+            <button type="submit" name="login" id="login-btn">Đăng nhập</button>
             <div id="sub-feature">
                 <label>
                     <input type="checkbox" name="remember">Nhớ đăng nhập

@@ -1,4 +1,6 @@
 <!--HEADER-->
+<link href="http://localhost:8080/coffee-cake/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+
 <div class="header">
     <div class="header_top">
         <div class="logo">
@@ -12,11 +14,11 @@
                 </form>
             </div>
             <div class="shopping_cart">
-                <div class="cart">
+                <a href="http://localhost:8080/coffee-cake/shopping.php" class="cart">
                     <span class="icon_cart"><i class="fa fa-shopping-basket"></i> </span>
                     <span class="no_product"> 0 </span>
                     <span class="cart_title">SẢN PHẨM</span>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -27,4 +29,3 @@
         <h2>Giỏ hàng</h2>
     </div>
 </div>
-<script src="js/shopping.js"></script>

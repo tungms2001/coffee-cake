@@ -1,0 +1,88 @@
+#update-form {
+    margin: 25px auto;
+    width: 540px;
+    font-size: 18px;
+    margin-top: 70px;
+    display: block;
+    margin-bottom: 30px;
+}
+
+#update-form h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+#update-form input[type="text"],
+#update-form input[type="password"] {
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    font-size: 16px;
+    display: inherit;
+    margin: 15px auto;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+#update-form button {
+    background-color: #37B542;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    display: inherit;
+    margin: 15px auto;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+#update-form #change-password {
+    margin: 15px auto;
+    display: block;
+}
+
+#update-form #change-password #check-change:checked~#change-section {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.3s 0.3s ease-in;
+}
+
+#update-form #change-password #change-section {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+.error {
+    color: #D0312D;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+}
+
+.alert-warning-oldpass {
+    padding: 8px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 8px;
+    width: 35%;
+    text-align: center;
+    margin-left: 33%;
+    margin-top: -320px;
+    position: absolute;
+}
+
+.alert-success-update {
+    padding: 8px;
+    background-color: #04AA6D;
+    color: white;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-top: -320px;
+    position: absolute;
+}

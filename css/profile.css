@@ -1,0 +1,55 @@
+.profile ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.profile ul li {
+    margin-bottom: 20px;
+}
+
+.profile ul li span {
+    font-weight: 600;
+}
+
+.profile a {
+    border-bottom: 2px solid #00B000;
+    padding-bottom: 5px;
+    font-size: 26px;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 45%;
+}
+
+.list{
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+}
+
+.list .listprofile{
+    border: none;
+    background: #999999;
+    padding: 10px 10px 10px 10px;
+    color: #666666;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.list .listprofile:hover{
+    background: #006600;
+    color: #FFFFFF;
+}
