@@ -177,10 +177,30 @@ if(isset($_SESSION['cart'])){?>
                     <?php
                     if (isset($_SESSION['username'])){?>
 
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data"">
 
                             <?php
-                            if (isset($_POST['order'])){?>
+                            if (isset($_POST['order'])){
+
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+                                    $name = $_POST['NAME'];
+                                    $phone = $_POST['PHONE'];
+                                    $address = $_POST['ADDRESS'];
+                                    $note = $_POST['NOTE'];
+                                    $username = $_SESSION['username'];
+
+                                    $id_arr = array_keys($_SESSION['cart']);
+                                    for ($i = 0; $i < count($id_arr); $i++) {
+                                        $id = $id_arr[$i];
+                                        $quantum = $_SESSION['cart'][$id_arr[$i]]['quantum'];
+                                        $price = $_SESSION['cart'][$id_arr[$i]]['PRICE'];
+
+                                        $sql_insert_bill = "INSERT INTO bill (USERNAME, NAME, PHONE, ADDRESS, NOTE, IDPR, QUANTUM, PRICE) " .
+                                            "VALUES('$username', '$name', '$phone', '$address', '$note', $id, $quantum, $price)";
+                                        mysqli_query($con, $sql_insert_bill);
+                                    }
+                                }?>
 
                                 <?php
                                 echo "<h4 style='color: #e85506'>Đặt hàng thành công!</h4><p style='margin-bottom: 0'>Thức uống sẽ đến với với quý khách sớm thôi.</p>";
@@ -233,3 +253,4 @@ if(isset($_SESSION['cart'])){?>
 ?>
 </body>
 </html>
+

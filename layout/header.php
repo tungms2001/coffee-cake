@@ -6,10 +6,26 @@
         <div class="logo">
             <a href="http://localhost:8080/coffee-cake/index.php"><img src="http://localhost:8080/coffee-cake/images/coffeecake.jpg" alt="" /></a>
         </div>
+        <div class="textheader">
+            <div class="Iam">
+                <p>COFFE-CAKE</p>
+                <b>
+                    <div class="innerIam">
+                        TRÀ SỮA<br/>
+                        CÀ PHÊ<br/>
+                        BÁNH NGỌT<br/>
+                        TOPPING<br/>
+                        WELCOME ^^
+                    </div>
+                </b>
+            </div>
+        </div>
         <div class="header_top_right">
             <div class="search_box">
-                <form>
-                    <span class="icon_search"><i class="fa fa-search"></i> </span>
+                <form method="post" action="find.php">
+                    <span
+                    <button type="submit" name="submit" class="icon_search"><i class="fa fa-search"></i></button>
+                    </span>
                     <input type="text" id="search" placeholder="Nhập vào tìm kiếm..."/>
                 </form>
             </div>

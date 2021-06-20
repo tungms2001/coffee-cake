@@ -33,9 +33,18 @@ $rows= mysqli_fetch_assoc($result)
 <div id="edit" class="button">
     <a href="updateuser.php" style="color: #ffffff; text-decoration: none;">Cập nhật</a>
 </div>
-<div class="list">
-    <a class="listprofile" href="http://localhost:8080/coffee-cake/listproduct/listproduct.php">Danh sách sản phẩm</a>
-</div>
+
+<!--ràng buộc nếu ng dùng đúng tên cho sử dụng chức năng này-->
+<?php
+if($_SESSION['username'] == 'admin'){
+    ?>
+    <div class="list">
+        <a class="listprofile" href="http://localhost:8080/coffee-cake/listproduct/listproduct.php">Danh sách sản phẩm</a>
+        <a class="listprofile" href="http://localhost:8080/coffee-cake/listbill.php">Danh sách đơn hàng</a>
+    </div>
+    <?php
+}
+?>
 
 <?php
 include "layout/footer.php";

@@ -4,7 +4,6 @@
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-<!--file css cho chỗ này đâu, có đó k, k t out à có-->
 <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://dayphache.edu.vn/wp-content/uploads/2020/02/mon-tra-sua-tran-chau.jpg" alt=""></div>
