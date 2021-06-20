@@ -36,6 +36,9 @@
         $repassword = stripslashes($_REQUEST['repassword']);
         $repassword = mysqli_real_escape_string($con,$repassword);
 
+        $address = stripslashes($_REQUEST['address']);
+        $address = mysqli_real_escape_string($con,$address);
+
         $sqli = "SELECT * FROM users WHERE  email = '$email'";
         $resultemail = mysqli_query($con, $sqli);
 
@@ -68,7 +71,7 @@
         }
         ///THỎA 3 ĐK TRÊN ĐK THÀNH CÔNG
         else{
-            $query = "INSERT into users (name, username, email, phone, password, repassword) VALUES ('$name','$username', '$email','$phone','".md5($password)."','".md5($repassword)."')";
+            $query = "INSERT into users (name, username, email, phone, password, repassword, address) VALUES ('$name','$username', '$email','$phone','".md5($password)."','".md5($repassword)."','$address')";
             $result = mysqli_query($con,$query);
             ?>
             <div class="alert-success">
@@ -107,6 +110,10 @@
                     <div class="input-box">
                         <span class="details">Nhập Lại Mật Khẩu</span>
                         <input type="password"name="repassword" placeholder="Nhập lại mật khẩu" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Địa chỉ</span>
+                        <input type="address" name="address" placeholder="Nhập địa chỉ" required>
                     </div>
                 </div>
                 <div class="button">

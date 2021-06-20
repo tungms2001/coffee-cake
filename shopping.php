@@ -71,6 +71,27 @@ require "layout/header.php";
 <!--MAIN-->
 <?php
 require_once 'database.php';
+//session_start();
+?>
+
+<?php
+
+    if (isset($_GET['id'])) {
+        $id = intval($_GET['id']);
+        if (isset($_SESSION['cart'][$id])) {
+            $_SESSION['cart'][$id]['quantum']++;
+        } else {
+            $sql_s = "SELECT * FROM product WHERE IDPR = $id";
+            $query_s = mysqli_query($con, $sql_s);
+
+            $row_s = mysqli_fetch_array($query_s);
+            $_SESSION['cart'][$row_s['IDPR']] = array(
+                "quantum" => 1,
+                "PRICE" => $row_s['PRICE']
+            );
+        }
+    }
+
 ?>
 
 <?php
@@ -126,7 +147,7 @@ if(isset($_SESSION['cart'])){?>
                                             <img style="width: 100px"; src="images/<?php echo $row['IMAGE'];?>">
                                         </td>
                                         <td>
-                                            <input type="text" name="quantum[<?php echo $row['IDPR'];?>]" size="5" value="<?php echo $_SESSION['cart'][$row['IDPR']]['quantum'];?>"/>
+                                            <input style="width:75px; height: 30px" type="text" name="quantum[<?php echo $row['IDPR'];?>]" size="5" value="<?php echo $_SESSION['cart'][$row['IDPR']]['quantum'];?>"/>
                                         </td>
                                         <td><?php echo $row['PRICE']?></td>
                                         <td><?php echo $_SESSION['cart'][$row['IDPR']]['quantum']*$row['PRICE'];?></td>
@@ -140,11 +161,68 @@ if(isset($_SESSION['cart'])){?>
                         </tr>
                     </table>
                     <button type="submit" name="submit">Cập nhật</button>
+                    <p style="margin-top: 20px; margin-bottom: 0">(*)Để xóa một sản phẩm hãy nhập số lượng của nó thành 0.</p>
                 </div>
             </div>
         </div>
     </form>
-    <p style="margin-left: 13px">(*)Để xóa một sản phẩm hãy nhập số lượng của nó thành 0.</p>
+    <br/>
+    <form method="post" action="shopping.php">
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Xác nhận thông tin</h2>
+                </div>
+                <div class="card-body">
+                    <?php
+                    if (isset($_SESSION['username'])){?>
+
+                        <form method="post" enctype="multipart/form-data">
+
+                            <?php
+                            if (isset($_POST['order'])){?>
+
+                                <?php
+                                echo "<h4 style='color: #e85506'>Đặt hàng thành công!</h4><p style='margin-bottom: 0'>Thức uống sẽ đến với với quý khách sớm thôi.</p>";
+                            }else{
+
+                                $username = $_SESSION['username'];
+                                $sql_o = "SELECT * FROM users WHERE username = '$username'";
+                                $query_o = mysqli_query($con, $sql_o);
+                                $row_o = mysqli_fetch_assoc($query_o); ?>
+
+                                <div class="form-group">
+                                    <label for="">Người nhận</label>
+                                    <input type="text" name="NAME" class="form-control" required value="<?php echo $row_o['NAME']?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Điện thoại</label>
+                                    <input type="text" name="PHONE" class="form-control" required value="<?php echo $row_o['PHONE']?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Địa chỉ</label>
+                                    <input type="text" name="ADDRESS" class="form-control" required value="<?php echo $row_o['ADDRESS']?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="">Ghi chú</label>
+                                    <input type="text" name="NOTE" class="form-control">
+                                </div>
+
+                                <button name="order" class="btn btn-success" type="submit">Đặt hàng</button>
+                            <?php
+                            }
+                            ?>
+
+                        </form>
+                    <?php
+                    }else{
+                        echo "<h4>Vui lòng đăng nhập để đặt hàng!</h4>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </form>
 <?php
 }else{
     echo "<h3 style='height: 200px; margin-left: 65px; margin-top: 15px'>Giỏ hàng của bạn đang trống. Vui lòng thêm một số sản phẩm!</h3>";
@@ -155,12 +233,3 @@ if(isset($_SESSION['cart'])){?>
 ?>
 </body>
 </html>
-<!--            </div>-->
-<!--            <br>-->
-<!--            <div class="card-body">-->
-<!--                <div><label>Người nhận: </label><input type="text" value="" name="name"/></div>-->
-<!--                <div><label>Điện thoại: </label><input type="text" value="" name="phone"/></div>-->
-<!--                <div><label>Địa chỉ: </label><input type="text" value="" name="address"/></div>-->
-<!--                <div><label>Ghi chú: </label><textarea name="note" cols="40" rows="5"></textarea></div>-->
-<!--                <input type="submit" name="order_click" value="Đặt hàng"/>-->
-<!--            </div>-->

@@ -26,7 +26,8 @@ $rows= mysqli_fetch_assoc($result)
     <?php
     echo "<ul><li><span>Họ và tên:</span> ". "<a1 style='color: #00B000;'>" . $rows['NAME'] ."</a1>". "</li>";
     echo "<li><span>Email:</span> " . "<a1 style='color: #00B000;'>" .$rows['EMAIL'] ."</a1>". "</li>";
-    echo "<li><span>Điện thoại:</span> ". "<a1 style='color: #00B000;'>" . $rows['PHONE']."</a1>" . "</li>" ."</ul>";
+    echo "<li><span>Điện thoại:</span> ". "<a1 style='color: #00B000;'>" . $rows['PHONE']."</a1>" . "</li>";
+    echo "<li><span>Đia Chỉ:</span> ". "<a1 style='color: #00B000;'>" . $rows['ADDRESS']."</a1>" . "</li>" ."</ul>";
     ?>
 </div>
 <div id="edit" class="button">

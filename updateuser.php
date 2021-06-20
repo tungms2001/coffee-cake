@@ -33,6 +33,7 @@ padding-bottom: 5px;"> CẬP NHẬT THÔNG TIN</a></h1>
     echo "<input type='text' name='name' placeholder='Họ và tên' value='" . $rows['NAME'] . "' required/>";
     echo "<input type='text' name='email' placeholder='Email' value='" . $rows['EMAIL'] . "' required/>";
     echo "<input type='text' name='phone' placeholder='Điện thoại' value='" . $rows['PHONE'] . "' required/>";
+    echo "<input type='text' name='address' placeholder='Điạ chỉ' value='" . $rows['ADDRESS'] . "' required/>";
     ?>
     <div id="change-password">
         <input type='checkbox' name='change-password' value='change' id="check-change">
@@ -53,7 +54,8 @@ if (isset($_POST['update'])){
     $username = $_SESSION['username'];
     $name=$_POST['name'];
     $email=$_POST['email'];
-    $phonenumber=$_POST['phone'];
+    $phone=$_POST['phone'];
+    $address=$_POST['address'];
 
     if ($con->connect_error){
         die("Connection failed: " . $con->connect_error);
@@ -66,7 +68,7 @@ if (isset($_POST['update'])){
             $result = mysqli_query($con,$query);
             $rows = mysqli_num_rows($result);
             if($rows > 0){
-                $sql1="UPDATE users SET name='$name', email='$email', phonenumber='$phonenumber' WHERE username='$username'";
+                $sql1="UPDATE users SET name='$name', email='$email', phone='$phone' , address='$address' WHERE username='$username'";
                 $sql2="UPDATE users SET username='$username' , password='".$new_password."' WHERE username='$username'";
                 mysqli_query($con,$sql1);
                 mysqli_query($con,$sql2);
@@ -92,7 +94,7 @@ if (isset($_POST['update'])){
             }
         }
         else {
-            $sqli = "UPDATE users SET name='$name', email='$email', phone='$phone' WHERE username='$username'";
+            $sqli = "UPDATE users SET name='$name', email='$email', phone='$phone', address='$address' WHERE username='$username'";
             if ($con->query($sqli) === TRUE){
                 header("location: userprofile.php");
             }
@@ -156,6 +158,25 @@ if (isset($_POST['update'])){
                 matchError.setAttribute('class', 'error');
                 matchError.innerHTML = "Vui lòng nhập email";
                 phone.parentNode.insertBefore(matchError, phone.nextSibling);
+            }
+        }
+        else {
+            const matchError = document.getElementById('match-error');
+            if (matchError !== "")
+                matchError.remove();
+        }
+    });
+
+    // Địa chỉ TRỐNG
+    const address = document.querySelector("[name='address']");
+    address.addEventListener('blur', () => {
+        if (address.value =="") {
+            if (document.getElementById('match-error') === null) {
+                const matchError = document.createElement('p');
+                matchError.setAttribute('id', 'match-error');
+                matchError.setAttribute('class', 'error');
+                matchError.innerHTML = "Vui lòng nhập địa chỉ";
+                address.parentNode.insertBefore(matchError, address.nextSibling);
             }
         }
         else {
